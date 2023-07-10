@@ -1,6 +1,6 @@
 local status, _ = pcall(require, "lspconfig")
 if not status then
-  return
+    return
 end
 
 require("lsp.handlers").setup()

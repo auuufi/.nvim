@@ -16,7 +16,7 @@ vim.keymap.set("n", "<S-e>", "<Cmd>Explore<CR>")
 -- Telescope command
 local status, builtin = pcall(require, "telescope.builtin")
 if not status then
-  return
+    return
 end
 
 vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find, {})
@@ -39,16 +39,16 @@ vim.keymap.set("n", "<C-m>", ui.toggle_quick_menu, {})
 vim.keymap.set("n", "<C-n>", ui.nav_next, {})
 vim.keymap.set("n", "<C-p>", ui.nav_prev, {})
 vim.keymap.set("n", "1", function()
-  ui.nav_file(1)
+    ui.nav_file(1)
 end, {})
 vim.keymap.set("n", "2", function()
-  ui.nav_file(2)
+    ui.nav_file(2)
 end, {})
 vim.keymap.set("n", "3", function()
-  ui.nav_file(3)
+    ui.nav_file(3)
 end, {})
 vim.keymap.set("n", "4", function()
-  ui.nav_file(4)
+    ui.nav_file(4)
 end, {})
 
 -- Lspsaga command
