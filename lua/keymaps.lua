@@ -10,10 +10,6 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
--- Navigate buffers
-vim.keymap.set("n", "<S-h>", "<Cmd>bprevious<CR>")
-vim.keymap.set("n", "<S-l>", "<Cmd>bnext<CR>")
-
 -- Explore directory of current file
 vim.keymap.set("n", "<S-e>", "<Cmd>Explore<CR>")
 
@@ -33,6 +29,27 @@ vim.keymap.set("n", "ft", builtin.filetypes, {})
 vim.keymap.set("n", "<Leader>b", builtin.git_branches, {})
 vim.keymap.set("n", "<Leader>c", builtin.git_commits, {})
 vim.keymap.set("n", "<Leader>s", builtin.git_status, {})
+
+-- Harpoon command
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<C-a>", mark.add_file, {})
+vim.keymap.set("n", "<C-m>", ui.toggle_quick_menu, {})
+vim.keymap.set("n", "<C-n>", ui.nav_next, {})
+vim.keymap.set("n", "<C-p>", ui.nav_prev, {})
+vim.keymap.set("n", "1", function()
+  ui.nav_file(1)
+end, {})
+vim.keymap.set("n", "2", function()
+  ui.nav_file(2)
+end, {})
+vim.keymap.set("n", "3", function()
+  ui.nav_file(3)
+end, {})
+vim.keymap.set("n", "4", function()
+  ui.nav_file(4)
+end, {})
 
 -- Lspsaga command
 vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>")

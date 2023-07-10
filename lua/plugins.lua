@@ -25,6 +25,7 @@ return packer.startup({
     use("nvim-lua/plenary.nvim")
     use("nvim-lualine/lualine.nvim")
     use("nvim-telescope/telescope.nvim")
+    use("ThePrimeagen/harpoon")
     use("folke/tokyonight.nvim")
     use({
       "nvim-treesitter/nvim-treesitter",
