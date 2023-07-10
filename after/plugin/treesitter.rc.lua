@@ -10,6 +10,7 @@ configs.setup({
     "markdown",
     "markdown_inline",
     "query",
+    "rust",
     "vimdoc",
   },
   sync_install = true,
