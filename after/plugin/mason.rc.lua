@@ -8,6 +8,7 @@ end
 local servers = {
     "lua_ls",
     "rust_analyzer",
+    "taplo",
 }
 
 local opts = {
