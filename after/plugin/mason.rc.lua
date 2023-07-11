@@ -6,9 +6,15 @@ if not mason_status and not mason_lspconfig_status and not lspconfig_status then
 end
 
 local servers = {
+    "emmet_ls",
+    "eslint",
+    "jsonls",
     "lua_ls",
     "rust_analyzer",
+    "svelte",
+    "tailwindcss",
     "taplo",
+    "tsserver",
 }
 
 local opts = {

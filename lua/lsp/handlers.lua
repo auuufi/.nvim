@@ -48,6 +48,9 @@ if not status then
     return
 end
 
-M.capabilities = lsp.default_capabilities()
+local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+client_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+M.capabilities = lsp.default_capabilities(client_capabilities)
 
 return M

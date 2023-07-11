@@ -6,6 +6,7 @@ end
 null_ls.setup({
     sources = {
         -- Code Actions
+        null_ls.builtins.code_actions.eslint_d,
         null_ls.builtins.code_actions.gitsigns.with({
             config = {
                 filter_actions = function(title)
@@ -14,7 +15,15 @@ null_ls.setup({
             },
         }),
 
+        -- Diagnostics
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.diagnostics.jsonlint,
+
         -- Formatting
+        null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.formatting.prettierd.with({
+            extra_filetypes = { "svelte" },
+        }),
         null_ls.builtins.formatting.rustfmt.with({
             extra_args = function(params)
                 local path = require("plenary.path")
