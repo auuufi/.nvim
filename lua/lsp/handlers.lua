@@ -28,6 +28,13 @@ local lsp_formatting = function(bufnr)
     })
 end
 
+local lsp_organize_imports = function(bufnr)
+    vim.lsp.buf_request_sync(bufnr, "workspace/executeCommand", {
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(bufnr) },
+    }, 50)
+end
+
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 function M.on_attach(client, bufnr)
@@ -38,6 +45,7 @@ function M.on_attach(client, bufnr)
             buffer = bufnr,
             callback = function()
                 lsp_formatting(bufnr)
+                lsp_organize_imports(bufnr)
             end,
         })
     end
