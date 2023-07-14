@@ -1,6 +1,6 @@
-vim.o.guifont = "Iosevka:h22"
-vim.g.neovide_padding_top = 5
-vim.g.neovide_padding_bottom = 5
+vim.o.guifont = "Iosevka:h16"
+vim.g.neovide_padding_top = 10
+vim.g.neovide_padding_bottom = 10
 vim.g.neovide_padding_right = 10
 vim.g.neovide_padding_left = 10
 vim.g.neovide_hide_mouse_when_typing = true
