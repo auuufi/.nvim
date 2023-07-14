@@ -12,10 +12,6 @@ gitsigns.setup({
         changedelete = { text = "󰟃 " },
         untracked = { text = "󰋗 " },
     },
-    current_line_blame = true,
-    current_line_blame_opts = {
-        delay = 50,
-    },
     preview_config = {
         border = "rounded",
     },

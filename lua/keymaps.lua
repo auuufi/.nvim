@@ -1,3 +1,5 @@
+vim.keymap.set("n", "<CR>", "<Nop>")
+
 -- Navigate when in insert mode
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-j>", "<Down>")
