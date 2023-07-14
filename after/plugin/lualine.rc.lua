@@ -31,7 +31,7 @@ lualine.setup({
         lualine_x = {
             "filetype",
             "filesize",
-            { "fileformat", symbols = { unix = "" } },
+            "fileformat",
             "encoding",
         },
         lualine_y = { "progress" },
