@@ -8,6 +8,7 @@ lualine.setup({
         theme = "tokyonight",
         component_separators = "󰇘",
         section_separators = { left = "", right = "" },
+        disabled_filetypes = { statusline = { "alpha" } },
         globalstatus = true,
         refresh = { statusline = 50 },
         padding = 2,

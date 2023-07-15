@@ -73,3 +73,6 @@ vim.keymap.set("n", "<Leader>hp", "<Cmd>Gitsigns preview_hunk<CR>")
 vim.keymap.set("n", "<Leader>hr", "<Cmd>Gitsigns reset_hunk<CR>")
 vim.keymap.set("n", "<Leader>hs", "<Cmd>Gitsigns stage_hunk<CR>")
 vim.keymap.set("n", "<Leader>hu", "<Cmd>Gitsigns undo_stage_hunk<CR>")
+
+-- Alpha command
+vim.keymap.set("n", "<C-a>", "<Cmd>Alpha<CR>")
