@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup()
+M.setup = function()
     local signs = { Error = "󰅙 ", Warn = "󱇎 ", Hint = "󰀨 ", Info = "󰋼 " }
 
     for type, icon in pairs(signs) do
@@ -37,7 +37,7 @@ end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-function M.on_attach(client, bufnr)
+M.on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
         vim.api.nvim_create_autocmd("BufWritePre", {
