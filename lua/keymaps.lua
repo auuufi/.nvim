@@ -54,6 +54,7 @@ vim.keymap.set("n", "4", function()
 end, {})
 
 -- Lspsaga command
+vim.keymap.set({ "n", "t" }, "<S-t>", "<Cmd>Lspsaga term_toggle<CR>")
 vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>")
 vim.keymap.set("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
 vim.keymap.set("n", "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>")
