@@ -39,6 +39,7 @@ return packer.startup({
         use("RRethy/vim-illuminate")
         use("lewis6991/gitsigns.nvim")
         use("numToStr/Comment.nvim")
+        use("lukas-reineke/indent-blankline.nvim")
 
         -- LSP support
         use("neovim/nvim-lspconfig")
