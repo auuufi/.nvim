@@ -49,8 +49,8 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm(),
-        ["<Esc>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -83,6 +83,13 @@ cmp.setup({
             vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
             return vim_item
         end,
+    },
+    matching = {
+        disallow_fuzzy_matching = true,
+        disallow_fullfuzzy_matching = true,
+        disallow_partial_fuzzy_matching = true,
+        disallow_partial_matching = true,
+        disallow_prefix_unmatching = true,
     },
     experimental = {
         ghost_text = true,
