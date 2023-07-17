@@ -3,10 +3,25 @@ if not status then
     return
 end
 
+local is_available = function(utils)
+    return utils.root_has_file({
+        ".eslintrc.js",
+        ".eslintrc.cjs",
+        ".eslintrc.yaml",
+        ".eslintrc.yml",
+        ".eslintrc.json",
+        "package.json",
+    })
+end
+
 null_ls.setup({
     sources = {
         -- Code Actions
-        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.code_actions.eslint_d.with({
+            condition = function(utils)
+                return is_available(utils)
+            end,
+        }),
         null_ls.builtins.code_actions.gitsigns.with({
             config = {
                 filter_actions = function(title)
@@ -16,11 +31,19 @@ null_ls.setup({
         }),
 
         -- Diagnostics
-        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.diagnostics.eslint_d.with({
+            condition = function(utils)
+                return is_available(utils)
+            end,
+        }),
         null_ls.builtins.diagnostics.jsonlint,
 
         -- Formatting
-        null_ls.builtins.formatting.eslint_d,
+        null_ls.builtins.formatting.eslint_d.with({
+            condition = function(utils)
+                return is_available(utils)
+            end,
+        }),
         null_ls.builtins.formatting.prettierd.with({
             extra_filetypes = { "svelte" },
         }),
