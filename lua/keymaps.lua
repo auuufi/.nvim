@@ -1,5 +1,15 @@
 vim.keymap.set("n", "<CR>", "<Nop>")
 
+-- Change indentations
+vim.keymap.set("n", "<C-i>2", function()
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
+end)
+vim.keymap.set("n", "<C-i>4", function()
+    vim.opt.shiftwidth = 4
+    vim.opt.tabstop = 4
+end)
+
 -- Navigate when in insert mode
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-j>", "<Down>")
