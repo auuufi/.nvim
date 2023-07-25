@@ -11,44 +11,32 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-local status, packer = pcall(require, "packer")
-if not status then
-    return
-end
-
+local packer = require("packer")
 local util = require("packer.util")
 
 return packer.startup({
     function(use)
         use("wbthomason/packer.nvim")
-        use("nvim-tree/nvim-web-devicons")
         use("nvim-lua/plenary.nvim")
-        use("nvim-lualine/lualine.nvim")
-        use("nvim-telescope/telescope.nvim")
+        use("RRethy/vim-illuminate")
         use("ThePrimeagen/harpoon")
         use("folke/tokyonight.nvim")
-        use({
-            "nvim-treesitter/nvim-treesitter",
-            run = function()
-                local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-                ts_update()
-            end,
-        })
-        use("nvim-treesitter/playground")
-        use("glepnir/lspsaga.nvim")
-        use("RRethy/vim-illuminate")
-        use("lewis6991/gitsigns.nvim")
-        use("numToStr/Comment.nvim")
-        use("lukas-reineke/indent-blankline.nvim")
         use("goolord/alpha-nvim")
+        use("lewis6991/gitsigns.nvim")
+        use("lukas-reineke/indent-blankline.nvim")
+        use("numToStr/Comment.nvim")
+        use("nvim-lualine/lualine.nvim")
+        use("nvim-telescope/telescope.nvim")
 
-        -- LSP support
-        use("neovim/nvim-lspconfig")
+        use("nvim-treesitter/nvim-treesitter")
+        use("nvim-treesitter/playground")
+
         use("williamboman/mason.nvim")
         use("williamboman/mason-lspconfig.nvim")
+        use("neovim/nvim-lspconfig")
+        use("glepnir/lspsaga.nvim")
         use("jose-elias-alvarez/null-ls.nvim")
 
-        -- Autocompletion
         use("hrsh7th/nvim-cmp")
         use("saadparwaiz1/cmp_luasnip")
         use("hrsh7th/cmp-nvim-lsp")
@@ -58,7 +46,6 @@ return packer.startup({
         use("hrsh7th/cmp-cmdline")
         use("windwp/nvim-autopairs")
 
-        -- Snippets
         use("L3MON4D3/LuaSnip")
         use("rafamadriz/friendly-snippets")
 

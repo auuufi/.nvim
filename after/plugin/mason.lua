@@ -1,14 +1,15 @@
 local mason_status, mason = pcall(require, "mason")
 local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+
 if not mason_status and not mason_lspconfig_status and not lspconfig_status then
     return
 end
 
+local handlers = require("lsp.handlers")
+
 local servers = {
     "emmet_ls",
-    "eslint",
-    "jsonls",
     "lua_ls",
     "rust_analyzer",
     "svelte",
@@ -18,8 +19,8 @@ local servers = {
 }
 
 local opts = {
-    on_attach = require("lsp.handlers").on_attach,
-    capabilities = require("lsp.handlers").capabilities,
+    on_attach = handlers.on_attach,
+    capabilities = handlers.capabilities,
 }
 
 mason.setup({
@@ -36,8 +37,9 @@ mason_lspconfig.setup({
 })
 
 for _, server in pairs(servers) do
-    local require, settings = pcall(require, "lsp.settings." .. server)
-    if require then
+    local settings_status, settings = pcall(require, "lsp.settings." .. server)
+
+    if settings_status then
         opts = vim.tbl_deep_extend("force", settings, opts)
     end
 

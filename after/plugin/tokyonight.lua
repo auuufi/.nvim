@@ -1,13 +1,12 @@
-local status, tokyonight = pcall(require, "tokyonight")
-if not status then
+local tokyonight_status, tokyonight = pcall(require, "tokyonight")
+
+if not tokyonight_status then
     return
 end
 
 tokyonight.setup({
-    style = "night",
+    style = "moon",
     styles = {
-        functions = { italic = true },
-        variables = { italic = true },
         sidebars = "normal",
         floats = "normal",
     },

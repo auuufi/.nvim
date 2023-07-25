@@ -1,8 +1,4 @@
-vim.o.guifont = "Iosevka:h16"
-vim.g.neovide_padding_top = 10
-vim.g.neovide_padding_bottom = 10
-vim.g.neovide_padding_right = 10
-vim.g.neovide_padding_left = 10
+vim.o.guifont = "Iosevka:h17"
 vim.g.neovide_hide_mouse_when_typing = true
 
 local change_scale_factor = function(delta)
@@ -18,3 +14,4 @@ end)
 vim.keymap.set("n", "<C-=>", function()
     change_scale_factor(1.10)
 end)
+vim.keymap.set({ "c", "i" }, "<C-v>", "<C-R>+")

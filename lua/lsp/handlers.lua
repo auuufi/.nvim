@@ -1,22 +1,14 @@
 local M = {}
 
 M.setup = function()
-    local signs = { Error = "󰅙 ", Warn = "󱇎 ", Hint = "󰀨 ", Info = "󰋼 " }
-
-    for type, icon in pairs(signs) do
-        local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
-
-    local config = {
+    vim.diagnostic.config({
         virtual_text = {
-            prefix = "󰝥 ",
+            prefix = "~",
         },
+        signs = false,
         update_in_insert = true,
         severity_sort = true,
-    }
-
-    vim.diagnostic.config(config)
+    })
 end
 
 local lsp_formatting = function(bufnr)
@@ -51,8 +43,9 @@ M.on_attach = function(client, bufnr)
     end
 end
 
-local status, lsp = pcall(require, "cmp_nvim_lsp")
-if not status then
+local lsp_status, lsp = pcall(require, "cmp_nvim_lsp")
+
+if not lsp_status then
     return
 end
 

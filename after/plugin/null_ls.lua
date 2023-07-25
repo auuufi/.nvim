@@ -1,5 +1,6 @@
-local status, null_ls = pcall(require, "null-ls")
-if not status then
+local null_ls_status, null_ls = pcall(require, "null-ls")
+
+if not null_ls_status then
     return
 end
 
@@ -16,11 +17,8 @@ end
 
 null_ls.setup({
     sources = {
-        -- Code Actions
         null_ls.builtins.code_actions.eslint_d.with({
-            condition = function(utils)
-                return is_available(utils)
-            end,
+            condition = is_available,
         }),
         null_ls.builtins.code_actions.gitsigns.with({
             config = {
@@ -30,19 +28,15 @@ null_ls.setup({
             },
         }),
 
-        -- Diagnostics
-        null_ls.builtins.diagnostics.eslint_d.with({
-            condition = function(utils)
-                return is_available(utils)
-            end,
-        }),
         null_ls.builtins.diagnostics.jsonlint,
+        null_ls.builtins.diagnostics.eslint_d.with({
+            condition = is_available,
+        }),
 
-        -- Formatting
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.taplo,
         null_ls.builtins.formatting.eslint_d.with({
-            condition = function(utils)
-                return is_available(utils)
-            end,
+            condition = is_available,
         }),
         null_ls.builtins.formatting.prettierd.with({
             extra_filetypes = { "svelte" },
@@ -64,7 +58,5 @@ null_ls.setup({
                 return { "--edition=2021" }
             end,
         }),
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.taplo,
     },
 })

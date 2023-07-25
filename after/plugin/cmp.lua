@@ -1,41 +1,13 @@
 local cmp_status, cmp = pcall(require, "cmp")
-local luasnip_status, luasnip = pcall(require, "luasnip")
 local autopairs_status, autopairs = pcall(require, "nvim-autopairs")
-if not cmp_status and not luasnip_status and not autopairs_status then
+local luasnip_status, luasnip = pcall(require, "luasnip")
+
+if not cmp_status and not autopairs_status and not luasnip_status then
     return
 end
 
 local completion_cmp = require("nvim-autopairs.completion.cmp")
 local from_vscode = require("luasnip.loaders.from_vscode")
-from_vscode.lazy_load()
-
-local cmp_kinds = {
-    Text = "  ",
-    Method = "  ",
-    Function = "  ",
-    Constructor = "  ",
-    Field = "  ",
-    Variable = "  ",
-    Class = "  ",
-    Interface = "  ",
-    Module = "  ",
-    Property = "  ",
-    Unit = "  ",
-    Value = "  ",
-    Enum = "  ",
-    Keyword = "  ",
-    Snippet = "  ",
-    Color = "  ",
-    File = "  ",
-    Reference = "  ",
-    Folder = "  ",
-    EnumMember = "  ",
-    Constant = "  ",
-    Struct = "  ",
-    Event = "  ",
-    Operator = "  ",
-    TypeParameter = "  ",
-}
 
 cmp.setup({
     snippet = {
@@ -78,22 +50,6 @@ cmp.setup({
         { name = "path" },
         { name = "cmdline" },
     }),
-    formatting = {
-        format = function(_, vim_item)
-            vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
-            return vim_item
-        end,
-    },
-    matching = {
-        disallow_fuzzy_matching = true,
-        disallow_fullfuzzy_matching = true,
-        disallow_partial_fuzzy_matching = true,
-        disallow_partial_matching = true,
-        disallow_prefix_unmatching = true,
-    },
-    experimental = {
-        ghost_text = true,
-    },
 })
 
 cmp.setup.cmdline({ "/", "?" }, {
@@ -116,8 +72,6 @@ cmp.setup.cmdline(":", {
     }),
 })
 
-autopairs.setup({
-    check_ts = true,
-})
-
+autopairs.setup({ check_ts = true })
 cmp.event:on("confirm_done", completion_cmp.on_confirm_done())
+from_vscode.lazy_load()
