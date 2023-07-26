@@ -11,7 +11,6 @@ local is_available = function(utils)
         ".eslintrc.yaml",
         ".eslintrc.yml",
         ".eslintrc.json",
-        "package.json",
     })
 end
 
