@@ -27,6 +27,7 @@ null_ls.setup({
             },
         }),
 
+        null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.diagnostics.jsonlint,
         null_ls.builtins.diagnostics.eslint_d.with({
             condition = is_available,

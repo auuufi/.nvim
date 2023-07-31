@@ -9,8 +9,12 @@ end
 local handlers = require("lsp.handlers")
 
 local servers = {
+    "cssls",
     "emmet_ls",
+    "html",
+    "jsonls",
     "lua_ls",
+    "marksman",
     "rust_analyzer",
     "svelte",
     "tailwindcss",
