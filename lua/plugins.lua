@@ -26,7 +26,9 @@ return packer.startup({
         use("lukas-reineke/indent-blankline.nvim")
         use("numToStr/Comment.nvim")
         use("nvim-lualine/lualine.nvim")
+
         use("nvim-telescope/telescope.nvim")
+        use("nvim-telescope/telescope-file-browser.nvim")
 
         use("nvim-treesitter/nvim-treesitter")
         use("nvim-treesitter/playground")

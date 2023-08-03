@@ -7,9 +7,6 @@ vim.keymap.set("n", "<C-i>4", function()
     vim.opt.tabstop = 4
 end)
 
-vim.keymap.set("n", "<CR>", "<Nop>")
-vim.keymap.set("n", "<S-e>", "<Cmd>Explore<CR>")
-
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
