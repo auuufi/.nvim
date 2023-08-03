@@ -6,8 +6,13 @@ end
 
 treesitter.setup({
     ensure_installed = {
+        "c",
+        "lua",
         "markdown",
         "markdown_inline",
+        "query",
+        "vim",
+        "vimdoc",
     },
     sync_install = true,
     auto_install = true,

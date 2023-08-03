@@ -1,6 +1,5 @@
 vim.o.guifont = "Iosevka:h17"
 vim.g.neovide_hide_mouse_when_typing = true
-vim.g.neovide_transparency = 0.95
 
 local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
