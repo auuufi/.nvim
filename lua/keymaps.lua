@@ -1,11 +1,15 @@
 vim.keymap.set("n", "<C-i>2", function()
     vim.opt.shiftwidth = 2
+    vim.opt.softtabstop = 2
     vim.opt.tabstop = 2
 end)
 vim.keymap.set("n", "<C-i>4", function()
     vim.opt.shiftwidth = 4
+    vim.opt.softtabstop = 4
     vim.opt.tabstop = 4
 end)
+
+vim.keymap.set("n", "<Leader>x", "<Cmd>!chmod +x %<CR>")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")

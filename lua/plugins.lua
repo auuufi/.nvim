@@ -22,10 +22,12 @@ return packer.startup({
         use("ThePrimeagen/harpoon")
         use("folke/tokyonight.nvim")
         use("goolord/alpha-nvim")
-        use("lewis6991/gitsigns.nvim")
         use("lukas-reineke/indent-blankline.nvim")
         use("numToStr/Comment.nvim")
         use("nvim-lualine/lualine.nvim")
+
+        use("lewis6991/gitsigns.nvim")
+        use("tpope/vim-fugitive")
 
         use("nvim-telescope/telescope.nvim")
         use("nvim-telescope/telescope-file-browser.nvim")
