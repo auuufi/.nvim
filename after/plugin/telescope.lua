@@ -26,23 +26,8 @@ telescope.setup({
             find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         },
     },
-    extensions = {
-        file_browser = {
-            initial_mode = "normal",
-            previewer = false,
-            path = "%:p:h",
-            grouped = true,
-            hidden = true,
-            prompt_path = true,
-            dir_icon = ".",
-            hijack_netrw = true,
-        },
-    },
 })
 
-telescope.load_extension("file_browser")
-
-vim.keymap.set("n", "<S-e>", telescope.extensions.file_browser.file_browser)
 vim.keymap.set("n", "<C-f>", builtin.current_buffer_fuzzy_find)
 vim.keymap.set("n", "fb", builtin.buffers)
 vim.keymap.set("n", "ff", builtin.find_files)
