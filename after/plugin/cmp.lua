@@ -21,7 +21,6 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm(),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -46,6 +45,7 @@ cmp.setup({
         { name = "luasnip" },
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
+        { name = "nvim_lsp_signature_help" },
         { name = "buffer" },
         { name = "path" },
         { name = "cmdline" },

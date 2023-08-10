@@ -8,10 +8,14 @@ gitsigns.setup({
     current_line_blame_opts = {
         delay = 50,
     },
+    preview_config = {
+        border = "rounded",
+    },
 })
 
 vim.keymap.set("n", "<Leader>tb", gitsigns.toggle_current_line_blame)
 vim.keymap.set("n", "<Leader>td", gitsigns.toggle_deleted)
+vim.keymap.set("n", "<Leader>gp", gitsigns.preview_hunk)
 vim.keymap.set("n", "<Leader>gu", gitsigns.undo_stage_hunk)
 vim.keymap.set("n", "<Leader>gd", function()
     gitsigns.diffthis("~")
