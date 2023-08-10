@@ -1,3 +1,5 @@
 # .nvim
 
-Neovim configuration is tailored to my preferences and workflow. Feel free to explore, use, and modify it according to your needs.
+This Neovim configuration is customized to match my personal preferences
+and streamline my workflow. Please feel free to explore, utilize, and adapt it
+to suit your own requirements.
